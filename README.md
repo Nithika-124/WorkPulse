@@ -90,45 +90,6 @@ Frontend will run on `http://localhost:5173`
 - Full access to analytics dashboards
 - Can filter and analyze team data
 
-## 📋 API Endpoints
-
-### Authentication
-```
-POST   /api/auth/register          Create new user account
-POST   /api/auth/login             Login and get JWT token
-```
-
-### Reports (Team Member)
-```
-POST   /api/reports                Create new report (auth required)
-GET    /api/reports/my             Get user's own reports (auth required)
-PUT    /api/reports/:id            Update report (auth required)
-DELETE /api/reports/:id            Delete report (auth required)
-```
-
-### Reports (Manager Only)
-```
-GET    /api/reports                Get all team reports (manager only)
-  - Query params: ?memberId=X&projectId=Y&status=submitted&startDate=&endDate=
-
-GET    /api/reports/analytics/summary        Overall statistics
-GET    /api/reports/analytics/by-member      Analytics per team member
-GET    /api/reports/analytics/by-project     Analytics per project
-GET    /api/reports/analytics/blockers       List all open blockers
-```
-
-### Projects (All Users Can View)
-```
-GET    /api/projects               Get all projects (auth required)
-```
-
-### Projects (Manager Only)
-```
-POST   /api/projects               Create new project (manager only)
-PUT    /api/projects/:id           Update project (manager only)
-DELETE /api/projects/:id           Delete project (manager only)
-```
-
 ### Assign Team Members
 Team members are added to projects via the MongoDB document structure. This can be done through the admin panel or directly via API.
 
